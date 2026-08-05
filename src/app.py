@@ -38,6 +38,42 @@ activities = {
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
+    },
+    "Basketball Team": {
+        "description": "Competitive basketball training and games",
+        "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
+        "max_participants": 15,
+        "participants": ["alex@mergington.edu"]
+    },
+    "Soccer Club": {
+        "description": "Recreational soccer and tournament participation",
+        "schedule": "Mondays and Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 22,
+        "participants": ["jake@mergington.edu", "noah@mergington.edu"]
+    },
+    "Debate Club": {
+        "description": "Develop argumentation and public speaking skills",
+        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 16,
+        "participants": ["lucas@mergington.edu"]
+    },
+    "Model United Nations": {
+        "description": "Simulate international diplomacy and governance",
+        "schedule": "Fridays, 4:00 PM - 5:30 PM",
+        "max_participants": 25,
+        "participants": ["ava@mergington.edu", "isabella@mergington.edu"]
+    },
+    "Art Club": {
+        "description": "Explore various artistic mediums and techniques",
+        "schedule": "Mondays, 3:30 PM - 4:30 PM",
+        "max_participants": 18,
+        "participants": ["grace@mergington.edu"]
+    },
+    "Theater Club": {
+        "description": "Perform in dramatic productions and develop acting skills",
+        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
+        "max_participants": 20,
+        "participants": ["maya@mergington.edu", "liam@mergington.edu"]
     }
 }
 
