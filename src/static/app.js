@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const participantsList = document.createElement("ul");
         participantsList.className = "participants-list";
+        participantsList.setAttribute("aria-label", `Participants in ${name}`);
 
         if (participantCount === 0) {
           const emptyItem = document.createElement("li");
