@@ -92,6 +92,7 @@ section h3 {
 .participants-list {
   padding-left: 0;
   color: #33413d;
+  line-height: 1.4;
   list-style: none;
 }
 

@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const activityCard = document.createElement("div");
         activityCard.className = "activity-card";
 
-        const spotsLeft = details.max_participants - details.participants.length;
+        const participantCount = details.participants.length;
+        const spotsLeft = details.max_participants - participantCount;
 
         activityCard.innerHTML = `
           <h4>${name}</h4>
@@ -23,14 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <div class="participants-section">
-            <h5>Participants (${details.participants.length})</h5>
+            <h5>Participants (${participantCount})</h5>
           </div>
         `;
 
         const participantsList = document.createElement("ul");
         participantsList.className = "participants-list";
 
-        if (details.participants.length === 0) {
+        if (participantCount === 0) {
           const emptyItem = document.createElement("li");
           emptyItem.className = "participants-empty";
           emptyItem.textContent = "No participants yet";
