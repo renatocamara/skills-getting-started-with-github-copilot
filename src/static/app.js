@@ -3,18 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const activitySelect = document.getElementById("activity");
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
+  let activities = {};
 
-  // Function to fetch activities from API
-  async function fetchActivities() {
-    try {
-      const response = await fetch("/activities", { cache: "no-store" });
-
-      if (!response.ok) {
-        throw new Error(`Failed to load activities: ${response.status}`);
-      }
-
-      const activities = await response.json();
-
+  function renderActivities() {
       // Clear loading message
       activitiesList.innerHTML = "";
       activitySelect.length = 1;
@@ -105,6 +96,19 @@ document.addEventListener("DOMContentLoaded", () => {
         option.textContent = name;
         activitySelect.appendChild(option);
       });
+  }
+
+  // Function to fetch activities from API
+  async function fetchActivities() {
+    try {
+      const response = await fetch("/activities", { cache: "no-store" });
+
+      if (!response.ok) {
+        throw new Error(`Failed to load activities: ${response.status}`);
+      }
+
+      activities = await response.json();
+      renderActivities();
     } catch (error) {
       activitiesList.innerHTML = "<p>Failed to load activities. Please try again later.</p>";
       console.error("Error fetching activities:", error);
@@ -131,8 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok) {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
+        activities[activity].participants.push(email);
         signupForm.reset();
-        await fetchActivities();
+        renderActivities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";
