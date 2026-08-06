@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok) {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
-        activities[activity].participants.push(email);
+        activities[activity] = result.activity;
         signupForm.reset();
         renderActivities();
       } else {
