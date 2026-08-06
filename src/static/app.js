@@ -34,12 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (participantCount === 0) {
           const emptyItem = document.createElement("li");
-          emptyItem.className = "participants-empty";
+          emptyItem.className = "participant-item participants-empty";
           emptyItem.textContent = "No participants yet";
           participantsList.appendChild(emptyItem);
         } else {
           details.participants.forEach((participant) => {
             const participantItem = document.createElement("li");
+            participantItem.className = "participant-item";
             const participantEmail = document.createElement("span");
             participantEmail.textContent = participant;
 
